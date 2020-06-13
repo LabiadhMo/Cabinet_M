@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block left %}
+
+    <a class="btn btn-outline-secondary" href="/Cabinet/Administration/Gestionconsultation/voir/{{consultation.cin}}">Retour</a>
+    
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="page-header"> Modifier Consultatation </h1>
+	<br></br>
+       {{form_start(form)}}
+       {{form_widget(form)}}
+       {{form_end(form)}}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: Cabinet_Medicale
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: 127.0.0.1
+    mailer_user: achref25471772
+    mailer_password: 12813299
+    secret: ThisTokenIsNotSoSecretChangeIt
+    #sefsefgsf
