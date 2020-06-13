@@ -11,17 +11,17 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
      */
 class CabinetController extends Controller
 {
-
-    /**
-     * @Route("/", name="Home")
-     */
-    /**
+ /**
      * consulter les authorization d'user qui fait la login et le redirect selon ces authorizations ( 
      * Admin > \admin\ 
      * assistant >  Cabinet/Administration
      * doctor >Cabinet/Administration
      * )  
      */
+    /**
+     * @Route("/", name="Home")
+     */
+   
     public function listAction()
     {
 
@@ -43,14 +43,14 @@ class CabinetController extends Controller
 }
 
 
-
+    /**
+     * return les actions \privilege des utilisateur connect")
+     */
     /**
      * @Route("/Cabinet/Administration", name="Cabinetadmin")
      */
 
-     /**
-     * return les actions \privilege des utilisateur connect")
-     */
+ 
     public function ShowAction()
     {
         return $this->render('Cabinet/CabinetAdmin.html.twig' , array());

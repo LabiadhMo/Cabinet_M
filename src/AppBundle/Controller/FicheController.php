@@ -23,13 +23,13 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 class FicheController extends Controller
 {
 
-
+   /**
+     * nous permet d"avoir et gestion des fiches  
+     */
     /**
      * @Route("/Cabinet/Administration/Gestionfiche", name="Gestionfiche")
      */
-     /**
-     * nous permet d"avoir et gestion des fiches  
-     */
+  
     public function GestionficheAction()
     {
        
@@ -45,13 +45,13 @@ class FicheController extends Controller
         ));
     }
 
-
-    /**
-     * @Route("/Cabinet/Administration/Gestionfiche/search", name="searchfiche")
-     */
       /**
      * nous permet de rechercher des fiches  
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionfiche/search", name="searchfiche")
+     */
+
     public function SearchficheAction()
     {
     	if ( ! empty($_POST['search'])){
@@ -83,13 +83,13 @@ class FicheController extends Controller
     	'users' => $users));
     }
 
+     /**
+     * nous permet d"avoir le fiche par id  
+     */
     /**
      * @Route("/Cabinet/Administration/Gestionfiche/voir/{id}", name="voirfiche")
      */
 
-       /**
-     * nous permet d"avoir le fiche par id  
-     */
     public function VoirficheAction($id)
     {
 
@@ -132,13 +132,13 @@ class FicheController extends Controller
 
     }
     
-
+  /**
+     * nous permet d"avoir et des fiches  des users a travers le ci et l'id user
+     */
     /**
      * @Route("/voirmafiche", name="voirmafiche")
      */
-      /**
-     * nous permet d"avoir et des fiches  des users a travers le ci et l'id user
-     */
+    
     public function VoirmaficheAction()
     {
         $c = $this->getUser()->getCin();

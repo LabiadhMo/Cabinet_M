@@ -10,29 +10,29 @@ use Symfony\Component\HttpFoundation\Request;
      */
 class DefaultController extends Controller
 {
-
-     /**
-     * @Route("/apropos", name="apropos")
-     */
-     /**
+/**
      * a propos le page 
      * get methode 
      */
+     /**
+     * @Route("/apropos", name="apropos")
+     */
+     
     public function aproposAction()
     {
         return $this->render('Cabinet/apropos.html.twig');
     }
 
-
     /**
-     * @Route("/contact", name="contact")
-     */ 
-
-      /**
      * contact action
      * post mail et besoin 
      * 
      */
+    /**
+     * @Route("/contact", name="contact")
+     */ 
+
+  
     public function contactAction(Request $request)
     {
         // Create the form according to the FormType created previously.

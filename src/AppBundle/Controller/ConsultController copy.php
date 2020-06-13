@@ -20,31 +20,31 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class ConsultController extends Controller
 {
-
-    /**
-     * @return string
-     */
-
      /**
      * md5() pour assure que le nom des fichiers ne sont pas semilair 
      * uniqid() avoir le timestamps 
      * return une string unique 
      * fonction d'utilite 
      */
+    /**
+     * @return string
+     */
+
+
     private function generateUniqueFileName()
     {
       
         return md5(uniqid());
     }
-
-    /**
-     * @Route("/Cabinet/Administration/Gestionconsultation", name="Gestionconsultation")
-     */
      /**
      * consulter l"espace des action 
      * persiste les consultation
      * route de gestion de consultation 
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionconsultation", name="Gestionconsultation")
+     */
+
     public function GestionconsultationAction()
     {
         $users = $this->getDoctrine()
@@ -55,16 +55,16 @@ class ConsultController extends Controller
         'users'=>$users
         ));
     }
-
-   /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/search", name="searchconsult")
-     */
-
      /**
      * consulter l"espace des action 
      * persiste les consultation
      * route de rechercher de consultaion 
      */
+   /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/search", name="searchconsult")
+     */
+
+
     public function SearchconsultAction()
     {
         if ( ! empty($_POST['search'])){
@@ -95,15 +95,15 @@ class ConsultController extends Controller
         'users' => $users));
     }
 
-
-    /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/créer/{id}", name="créerconsultation")
-     */
-     /**
+ /**
      * 
      * persiste les consultation
      * route de creer  de consultaion 
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/créer/{id}", name="créerconsultation")
+     */
+    
     public function CréerconsultationAction($id, Request $request)
     {
         $user = $this->getDoctrine()
@@ -185,16 +185,16 @@ class ConsultController extends Controller
         return $this->render('Cabinet/consultation/créerconsultation.html.twig', array(
         'form' => $form->createView()));
     }
-    
-    /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/edit/{id}", name="editconsultations")
-     */
-
-      /**
+          /**
      * consulter l"espace des action 
      * persiste les consultation
      * route d"editer de consultaion par id 
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/edit/{id}", name="editconsultations")
+     */
+
+
     public function EditconsultationAction($id, Request $request)
     {
 
@@ -281,15 +281,15 @@ class ConsultController extends Controller
         ));
     }
 
-    /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/delete/{id}", name="deleteconsultation")
-     */
-
       /**
      * consulter l"espace des action 
      * persiste les consultation
      * route de supriler  de consultaion par id 
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/delete/{id}", name="deleteconsultation")
+     */
+
     public function DeleteconsultAction($id, Request $request)
     {
 
@@ -306,15 +306,15 @@ class ConsultController extends Controller
 
     }
      
-
-    /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/voir/", name="voirconsultations")
-     */ 
-     /**
+ /**
      * consulter l"espace des action 
      * persiste les consultation
      * route  d'avoir de consultaion 
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/voir/", name="voirconsultations")
+     */ 
+    
      public function VoirconsultsAction()
      {
 
@@ -329,16 +329,16 @@ class ConsultController extends Controller
         'users'=>$users));  
 
      }
-
-   /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/voir/search", name="searchconsultations")
-     */
-
-      /**
+/**
      * consulter l"espace des action 
      * persiste les consultation
      * route de rechercher de consultaion 
      */
+   /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/voir/search", name="searchconsultations")
+     */
+
+      
     public function SearchconsultationsAction()
     {
         if ( ! empty($_POST['search'])){
@@ -370,16 +370,16 @@ class ConsultController extends Controller
         'users' => $users));
     }       
 
-
-    /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/voir/{cin}", name="voirconsultation")
-     */ 
-
-      /**
+ /**
      * consulter l"espace des action 
      * persiste les consultation
      * route de voir consultaion 
      */
+    /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/voir/{cin}", name="voirconsultation")
+     */ 
+
+     
      public function VoirconsultAction($cin, Request $request)
      {
 
@@ -401,16 +401,16 @@ class ConsultController extends Controller
         'consults'=>$consults, 'users'=>$users ));  
 
      }
-
-   /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/voir/search/{cin}", name="searchconsultation")
-     */
-
-      /**
+  /**
      * consulter l"espace des action 
      * persiste les consultation
      * route de rechercher de consultaion 
      */
+   /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/voir/search/{cin}", name="searchconsultation")
+     */
+
+    
     public function SearchconsultationnAction($cin, Request $request)
     {
         if ( ! empty($_POST['search'])){
@@ -448,15 +448,15 @@ class ConsultController extends Controller
         return $this->render('Cabinet/consultation/voirconsultation.html.twig', array(
         'consults'=>$consults, 'users'=>$users ));
     }
-
-     /**
-     * @Route("/Cabinet/Administration/Gestionconsultation/voirconsult/{id}", name="voirconsult")
-     */ 
-     /**
+    /**
      * consulter l"espace des action 
      * persiste les consultation
      * route de voir consultaion 
      */
+     /**
+     * @Route("/Cabinet/Administration/Gestionconsultation/voirconsult/{id}", name="voirconsult")
+     */ 
+ 
      public function VoirconsultuAction($id, Request $request)
      {
 

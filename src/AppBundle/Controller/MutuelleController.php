@@ -29,10 +29,7 @@ class MutuelleController extends Controller
     /**
      * @Route("/Cabinet/Administration/Gestionmutuelle", name="Gestionmutuelle")
      */
-      /**
-     * fonction d'utilite 
-     * persist des mutuelle   
-     */
+      
     public function GestionmutuelleAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -53,12 +50,11 @@ class MutuelleController extends Controller
         ));
     }
 
-
+   /**
+     * nous permet de rechercher dans les mutuelles avec user cin 
+     */
     /**
      * @Route("/Cabinet/Administration/Gestionmutuelle/search", name="searchmutuelle")
-     */
-      /**
-     * nous permet de rechercher dans les mutuelles avec user cin 
      */
     public function SearchmutuelleAction()
     {
@@ -90,12 +86,11 @@ class MutuelleController extends Controller
         return $this->render('Cabinet/mutuelle/gestionmutuelle.html.twig', array(
         'users' => $users));
     }
-
+          /**
+     * nous permet de creer un mutuelle par id et infos  
+     */
     /**
      * @Route("/Cabinet/Administration/Gestionmutuelle/créer/{id}", name="créermutuelle")
-     */
-      /**
-     * nous permet de creer un mutuelle par id et infos  
      */
     public function CréermutuelleAction($id, Request $request)
     {
@@ -147,12 +142,11 @@ class MutuelleController extends Controller
         'form' => $form->createView()
         ));
         }
-
+     /**
+     * nous permet de faire des mise a jour sur le mutuelle par id de mutuelle  
+     */
     /**
      * @Route("/Cabinet/Administration/Gestionmutuelle/edit/{id}", name="editmutuelle")
-     */
-      /**
-     * nous permet de faire des mise a jour sur le mutuelle par id de mutuelle  
      */
     public function EditmutuelleAction($id, Request $request)
     {
@@ -229,12 +223,11 @@ class MutuelleController extends Controller
         'form' => $form->createView()
         ));
         }
-
+              /**
+     * nous permet de suprime une mutuelle par son id  
+     */
     /**
      * @Route("/Cabinet/Administration/Gestionmutuelle/delete/{id}", name="deletemutuelle")
-     */
-      /**
-     * nous permet de suprime une mutuelle par son id  
      */
     public function DeletemutuelleAction($id, Request $request)
     {

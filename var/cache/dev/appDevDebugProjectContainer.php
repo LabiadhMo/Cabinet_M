@@ -16,6 +16,6 @@ if (!\class_exists(appDevDebugProjectContainer::class, false)) {
 
 return new \ContainerKtz10xl\appDevDebugProjectContainer(array(
     'container.build_hash' => 'Ktz10xl',
-    'container.build_id' => 'bb6d4105',
-    'container.build_time' => 1591645037,
+    'container.build_id' => '05611a0f',
+    'container.build_time' => 1592079024,
 ));

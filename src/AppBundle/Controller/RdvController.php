@@ -25,17 +25,17 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
      */
 class RdvController extends Controller
 {
-
-
-    /**
-     * @Route("/PrendreRDV", name="Prendrerdv")
-     */
-    /**
+/**
      * envoye une demande de Rdv 
      * consulter la disponibilte 
      * si dispo ajoute rdv
      * 
      */
+
+    /**
+     * @Route("/PrendreRDV", name="Prendrerdv")
+     */
+    
     public function RDVAction(Request $request)
     {
             $cin = $this->getUser()->getCin();
@@ -135,12 +135,12 @@ class RdvController extends Controller
             'form' => $form->createView()
              ));
     }
+     /**
+     * consulter tous  les rendez vous 
+     */
 
     /**
      * @Route("/Cabinet/Administration/Gestionrdv", name="Gestionrdv")
-     */
-     /**
-     * consulter tous  les rendez vous 
      */
 
     public function GestionrdvAction()
@@ -155,12 +155,12 @@ class RdvController extends Controller
         ));
     }
 
-   /**
-     * @Route("/Cabinet/Administration/Gestionrdv/search", name="searchrdv")
-     */
-     /**
+    /**
      * faire des recherches sur les rdv 
      * par cin de patient 
+     */
+   /**
+     * @Route("/Cabinet/Administration/Gestionrdv/search", name="searchrdv")
      */
     public function SearchrdvAction()
     {
@@ -191,14 +191,12 @@ class RdvController extends Controller
 
         return $this->render('Cabinet/rdv/gestionrdv.html.twig', array(
         'rdvs' => $rdvs));
-    }
+        }
+             // editer un rendez vous par son id 
 
      /**
      * @Route("/Cabinet/Administration/Gestionrdv/edit/{id}", name="editrdv")
-     */
-     /**
-     * editer un rendez vous par son id 
-     */
+     */     
     public function EditrdvAction($id, Request $request)
     {
         $rdv = $this->getDoctrine()->getRepository('AppBundle:RDV')->find($id);
@@ -281,12 +279,11 @@ class RdvController extends Controller
         ));
     }
 
-
+  
+    // supprime un rendez vous par son id 
+     
      /**
      * @Route("/Cabinet/Administration/Gestionrdv/delete/{id}", name="deleterdv")
-     */
-     /**
-     * supprime un rendez vous par son id 
      */
     public function DeleterdvAction($id)
     {
@@ -301,12 +298,10 @@ class RdvController extends Controller
       return $this->redirectToRoute('Gestionrdv');      
     }
 
+     // creation  un rendez vous 
+     // recoit un objet request 
     /**
      * @Route("/Cabinet/Administration/Gestionrdv/créer", name="créerrdv")
-     */
-        /**
-     * creation  un rendez vous 
-     * recoit un objet request 
      */
     public function CréerrdvAction(Request $request)
     {
